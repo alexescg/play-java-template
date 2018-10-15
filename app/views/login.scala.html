@@ -39,6 +39,12 @@
 
     	}
     </div>
+      <div>
+          <h1>hue</h1>
+          @forProviders(playAuth) { p =>
+              <a href="@p.getUrl()">@p.getKey()</a>
+          }
+      </div>
 
    <div class="col-xs-6 col-sm-4">
       @Messages("playauthenticate.login.oauth")

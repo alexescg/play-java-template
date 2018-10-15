@@ -94,4 +94,11 @@ public class Application extends Controller {
         }
         return this.provider.handleSignup(ctx());
     }
+
+    public Result oAuthDenied(final String providerKey) {
+        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+        flash(FLASH_ERROR_KEY,
+                "You need to accept the OAuth connection in order to use this website!");
+        return redirect(routes.Application.index());
+    }
 }

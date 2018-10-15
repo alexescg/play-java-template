@@ -4,6 +4,7 @@ import com.feth.play.module.mail.IMailer;
 import com.feth.play.module.mail.Mailer;
 import com.feth.play.module.mail.Mailer.MailerFactory;
 import com.feth.play.module.pa.Resolver;
+import com.feth.play.module.pa.providers.oauth2.facebook.FacebookAuthProvider;
 import com.feth.play.module.pa.providers.oauth2.google.GoogleAuthProvider;
 import com.feth.play.module.pa.providers.openid.OpenIdAuthProvider;
 import com.google.inject.AbstractModule;
@@ -35,7 +36,7 @@ public class MyModule extends AbstractModule {
 
 		bind(MyUserService.class).asEagerSingleton();
 		bind(GoogleAuthProvider.class).asEagerSingleton();
-		//bind(FacebookAuthProvider.class).asEagerSingleton();
+		bind(FacebookAuthProvider.class).asEagerSingleton();
 		//bind(FoursquareAuthProvider.class).asEagerSingleton();
 		bind(MyUsernamePasswordAuthProvider.class).asEagerSingleton();
 		bind(OpenIdAuthProvider.class).asEagerSingleton();
